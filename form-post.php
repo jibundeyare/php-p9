@@ -6,12 +6,12 @@ $post = false;
 // $post = true;
 
 // aucune erreur
-// $errors = [];
+$errors = [];
 
 // erreur dans le champ test
-$errors = [
-    'test' => "Le champ n'est pas correctement rempli.",
-];
+// $errors = [
+//     'test' => "Le champ n'est pas correctement rempli.",
+// ];
 ?>
 <!DOCTYPE html>
 <html lang="en">
