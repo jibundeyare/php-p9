@@ -1,18 +1,3 @@
-<?php
-// données non envoyées
-$post = false;
-
-// données envoyées
-// $post = true;
-
-// aucune erreur
-$errors = [];
-
-// erreur dans le champ test
-// $errors = [
-//     'test' => "Le champ n'est pas correctement rempli.",
-// ];
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,28 +16,72 @@ $errors = [];
                 <h1>Form post</h1>
 
                 <form action="/form-validate.php" method="post">
+                    <!-- version formulaire vierge -->
                     <div class="mb-3">
                         <label for="test" class="form-label">Test</label>
-                        <input id="test" class="form-control
-                        <?php if ($post && empty($errors['test'])): ?>
-                            is-valid
-                        <?php endif ?>
-                        <?php if ($post && !empty($errors['test'])): ?>
-                            is-invalid
-                        <?php endif ?>
-                        " type="text" name="test" value="" placeholder="foo bar baz">
+                        <input id="test" class="form-control" type="text" name="test" value="" placeholder="foo bar baz">
                         <div class="form-text">Texte d'aide pour remplir le champ</div>
-                        <?php if ($post && empty($errors['test'])): ?>
-                            <div class="valid-feedback">
-                                Le champ est correctement rempli.
-                            </div>
-                        <?php endif ?>
-                        <?php if ($post && !empty($errors['test'])): ?>
-                            <div class="invalid-feedback">
-                                Le champ n'est pas correctement rempli.
-                            </div>
-                        <?php endif ?>
                     </div>
+
+                    <!-- version formulaire correct -->
+                    <div class="mb-3">
+                        <label for="test" class="form-label">Test</label>
+                        <input id="test" class="form-control is-valid" type="text" name="test" value="" placeholder="foo bar baz">
+                        <div class="form-text">Texte d'aide pour remplir le champ</div>
+                        <div class="valid-feedback">
+                            Le champ est correctement rempli.
+                        </div>
+                    </div>
+
+                    <!-- version formulaire erreur -->
+                    <div class="mb-3">
+                        <label for="test" class="form-label">Test</label>
+                        <input id="test" class="form-control is-invalid" type="text" name="test" value="" placeholder="foo bar baz">
+                        <div class="form-text">Texte d'aide pour remplir le champ</div>
+                        <div class="invalid-feedback">
+                            Le champ n'est pas correctement rempli.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <input class="form-control" type="text" name="login" id="login" placeholder="votre nom d'utilisateur" required>
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control" type="password" name="password" id="password" placeholder="votre mot de passe" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <p>Votre fruit préféré :</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="fruit" id="fruit_1" value="ananas">
+                            <label class="form-check-label" for="fruit_1">Ananas</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="fruit" id="fruit_2" value="banane">
+                            <label class="form-check-label" for="fruit_2">Banane</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="fruit" id="fruit_3" value="cerise">
+                            <label class="form-check-label" for="fruit_3">Cerise</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <p>Vos plats préférés :</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="plat[]" id="plat_1" value="lasagne">
+                            <label class="form-check-label" for="plat_1">Lasagne</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="plat[]" id="plat_2" value="ramen">
+                            <label class="form-check-label" for="plat_2">Ramen</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="plat[]" id="plat_3" value="entrecote">
+                            <label class="form-check-label" for="plat_3">Entrecôte</label>
+                        </div>
+                    </div>
+
                     <div class="mb-3">
                         <button class="btn btn-primary" type="submit">Valider</button>
                     </div>
