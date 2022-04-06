@@ -10,3 +10,8 @@ body {
 label[for="fruit_3"] {
     font-weight: bold;
 }
+
+.custom-checkbox {
+	height: 3.8em;
+	overflow: scroll;
+}

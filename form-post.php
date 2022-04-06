@@ -47,7 +47,7 @@
                         <input class="form-control" type="text" name="login" id="login" placeholder="votre nom d'utilisateur" required>
                     </div>
                     <div class="mb-3">
-                        <input class="form-control" type="password" name="password" id="password" placeholder="votre mot de passe" required>
+                        <input class="form-control" type="password" name="password" id="password" placeholder="votre mot de passe">
                     </div>
 
                     <div class="mb-3">
@@ -80,6 +80,46 @@
                             <input class="form-check-input" type="checkbox" name="plat[]" id="plat_3" value="entrecote">
                             <label class="form-check-label" for="plat_3">Entrecôte</label>
                         </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <p>Vos plats préférés :</p>
+                        <div class="custom-checkbox">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="plat_alt[]" id="plat_alt_1" value="lasagne">
+                                <label class="form-check-label" for="plat_alt_1">Lasagne</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="plat_alt[]" id="plat_alt_2" value="ramen">
+                                <label class="form-check-label" for="plat_alt_2">Ramen</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="plat_alt[]" id="plat_alt_3" value="entrecote">
+                                <label class="form-check-label" for="plat_alt_3">Entrecôte</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <p>Votre film préféré :</p>
+                        <!-- l'attribute "size" permet de choisir le nombre d'éléments affichés en même temps -->
+                        <!-- <select name="film" id="film" size="2"> -->
+                        <select name="film" id="film">
+                            <option id="film_1" value="interstellar">Interstellar</option>
+                            <option id="film_2" value="fight club">Fight club</option>
+                            <!-- l'attribut "selected" permet d'indiquer quel élément est sélectionné par défaut -->
+                            <option id="film_3" value="shining" selected>Shining</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <p>Vos chanteurs préférés :</p>
+                        <!-- pour que le champs soit vraiment à sélection multiple, il faut ajouter les crochets "[]" dans le name et l'attribut "multiple" -->
+                        <select name="singers[]" id="singers" size="5" multiple>
+                            <option id="singers_1" value="celine dion">Céline Lion</option>
+                            <option id="singers_2" value="linkin park">Linkin Park</option>
+                            <option id="singers_3" value="jean-jacques goldman">Jean-Jacques Goldman</option>
+                        </select>
                     </div>
 
                     <div class="mb-3">
