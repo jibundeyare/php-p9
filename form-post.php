@@ -86,7 +86,8 @@
                         <p>Vos plats préférés :</p>
                         <div class="custom-checkbox">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="plat_alt[]" id="plat_alt_1" value="lasagne">
+                            <!-- pour que le champs soit vraiment à sélection multiple, il faut ajouter les crochets "[]" dans le name -->
+                            <input class="form-check-input" type="checkbox" name="plat_alt[]" id="plat_alt_1" value="lasagne">
                                 <label class="form-check-label" for="plat_alt_1">Lasagne</label>
                             </div>
                             <div class="form-check">
