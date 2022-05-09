@@ -1,8 +1,9 @@
 <?php
 
+Use Blog\Article;
+Use Blog\Category;
+
 require __DIR__.'/vendor/autoload.php';
-require __DIR__.'/Blog/Category.php';
-require __DIR__.'/Blog/Article.php';
 
 $categories = [
     new Category(1, 'Foo', null),
@@ -19,8 +20,11 @@ $articles = [
 dump($articles);
 
 foreach ($articles as $article) {
-    echo $article->title;
+    echo "title: {$article->getTitle()}";
     echo '<br>';
-    echo $article->category->getName();
+    echo "category: {$article->getCategory()->getName()}";
     echo '<br>';
+    // fait la même chose que la ligne 24
+    // $category = $article->getCategory();
+    // echo "category: {$category->getName()}";
 }

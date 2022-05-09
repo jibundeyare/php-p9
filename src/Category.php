@@ -12,6 +12,8 @@
 // - deleted_at
 // - deleted_by
 
+namespace Blog;
+
 class Category
 {
     private $id;

@@ -1,4 +1,9 @@
 {
+    "autoload": {
+        "psr-4": {
+            "Blog\\": "src/"
+        }
+    },
     "require": {
         "symfony/var-dumper": "^6.0",
         "symfony/yaml": "^6.0"
