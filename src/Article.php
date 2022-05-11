@@ -31,7 +31,7 @@ class Article
         $this->id = $id;
         $this->title = $title;
         $this->body = $body;
-        $this->category = $category;
+        $this->setCategory($category);
     }
 
     /**
@@ -98,6 +98,8 @@ class Article
     public function setCategory($category)
     {
         $this->category = $category;
+
+        $category->addArticle($this);
 
         return $this;
     }
