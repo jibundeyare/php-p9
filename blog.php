@@ -1,7 +1,7 @@
 <?php
 
-Use Blog\Article;
-Use Blog\Category;
+Use App\Blog\Article;
+Use App\Blog\Category;
 
 require __DIR__.'/vendor/autoload.php';
 

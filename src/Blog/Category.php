@@ -12,7 +12,7 @@
 // - deleted_at
 // - deleted_by
 
-namespace Blog;
+namespace App\Blog;
 
 class Category
 {
