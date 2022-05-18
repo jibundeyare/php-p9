@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 // Category
 // - id
@@ -14,6 +14,8 @@
 
 namespace App\Blog;
 
+use App\Blog\Article;
+
 class Category
 {
     private $id;
@@ -21,29 +23,18 @@ class Category
     private $description;
     private $articles;
 
-    public function __construct($id, $name, $description, $articles = null)
+    public function __construct(int $id, string $name, ?string $description, array $articles = [])
     {
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;
-
-        // if ($articles) {
-        //     $this->articles = $articles;
-        // } else {
-        //     $this->articles = [];
-        // }
-
-        // fait la même chose que la ligne 30
-        // $this->articles = $articles ? $articles : [];
-
-        // fait la même chose que la ligne 37
-        $this->articles = $articles ?? [];
+        $this->articles = $articles;
     }
 
     /**
      * Get the value of id
      */ 
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -51,7 +42,7 @@ class Category
     /**
      * Get the value of name
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -61,7 +52,7 @@ class Category
      *
      * @return  self
      */
-    public function setName($name)
+    public function setName(string $name): self
     {
         $this->name = $name;
 
@@ -71,7 +62,7 @@ class Category
     /**
      * Get the value of description
      */ 
-    public function getDescription()
+    public function getDescription(): ?string
     {
         return $this->description;
     }
@@ -81,7 +72,7 @@ class Category
      *
      * @return  self
      */ 
-    public function setDescription($description)
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
 
@@ -91,7 +82,7 @@ class Category
     /**
      * Get the value of articles
      */ 
-    public function getArticles()
+    public function getArticles(): array
     {
         return $this->articles;
     }
@@ -101,14 +92,14 @@ class Category
      *
      * @return  self
      */ 
-    public function setArticles($articles)
+    public function setArticles(array $articles): self
     {
         $this->articles = $articles;
 
         return $this;
     }
 
-    public function addArticle($article)
+    public function addArticle(Article $article): self
     {
         if (!in_array($article, $this->articles)) {
             $this->articles[] = $article;
@@ -117,7 +108,7 @@ class Category
         return $this;
     }
 
-    public function removeArticle($article)
+    public function removeArticle(Article $article): self
     {
         $index = array_search($article, $this->articles);
 
