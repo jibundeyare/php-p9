@@ -2,22 +2,24 @@
 
 namespace App\Todo;
 
+use DateTime;
+
 class Task
 {
     private $id;
     private $title;
     private $limitDate;
-    private $status;
-    // private $responsible;
+    private $done;
     private $tags;
+    // private $responsible;
 
-    public function __construct($id, $title, $limitDate, $status, $tags = null)
+    public function __construct($id, $title, DateTime $limitDate, $done, $tags = [])
     {
         $this->id = $id;
         $this->title = $title;
         $this->limitDate = $limitDate;
-        $this->status = $status;
-        $this->tags = $tags ?? [];
+        $this->done = $done;
+        $this->tags = $tags;
     }
 
     /**
@@ -51,7 +53,7 @@ class Task
     /**
      * Get the value of limitDate
      */ 
-    public function getLimitDate()
+    public function getLimitDate(): DateTime
     {
         return $this->limitDate;
     }
@@ -61,7 +63,7 @@ class Task
      *
      * @return  self
      */ 
-    public function setLimitDate($limitDate)
+    public function setLimitDate(DateTime $limitDate): self
     {
         $this->limitDate = $limitDate;
 
@@ -69,21 +71,21 @@ class Task
     }
 
     /**
-     * Get the value of status
+     * Get the value of done
      */ 
-    public function getStatus()
+    public function getDone()
     {
-        return $this->status;
+        return $this->done;
     }
 
     /**
-     * Set the value of status
+     * Set the value of done
      *
      * @return  self
      */ 
-    public function setStatus($status)
+    public function setDone($done)
     {
-        $this->status = $status;
+        $this->done = $done;
 
         return $this;
     }

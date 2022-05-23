@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-// Category
+// Tag
 // - id
 // - name / titre
 // - description
@@ -17,7 +17,7 @@ namespace App\Blog;
 use App\Blog\ANamedObject;
 use App\Blog\Article;
 
-class Category extends ANamedObject
+class Tag extends ANamedObject
 {
     private $articles;
 

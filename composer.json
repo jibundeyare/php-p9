@@ -4,8 +4,13 @@
             "App\\": "src/"
         }
     },
+    "config": {
+        "platform": {
+            "php": "7.4.20"
+        }
+    },
     "require": {
-        "symfony/var-dumper": "^6.0",
-        "symfony/yaml": "^6.0"
+        "symfony/var-dumper": "^5.0",
+        "symfony/yaml": "^5.0"
     }
 }
