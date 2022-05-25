@@ -58,10 +58,16 @@ $attachments = [
     new Attachment(3, "doc 3", "/doc/doc3.pdf", $categories[2]),
 ];
 
-for ($i = 0; $i < 3; $i++) {
-    $result = Search::hasCategory($articles[$i], $categories[$i]);
-    echo "{$articles[$i]->getCategory()->getName()} / {$categories[$i]->getName()}";
-    echo "<br>";
-    echo $result ? "oui" : "non";
-    echo "<br>";
-}
+$i = 0;
+
+$result = Search::hasCategory($articles[$i], $categories[$i]);
+echo "{$articles[$i]->getCategory()->getName()} / {$categories[$i]->getName()}";
+echo "<br>";
+echo $result ? "oui" : "non";
+echo "<br>";
+
+$result = Search::hasCategory($attachments[$i], $categories[$i]);
+echo "{$attachments[$i]->getCategory()->getName()} / {$categories[$i]->getName()}";
+echo "<br>";
+echo $result ? "oui" : "non";
+echo "<br>";

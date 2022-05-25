@@ -3,9 +3,10 @@
 namespace App\Blog;
 
 use App\Blog\Category;
+use App\Blog\Interface\ICategorizable;
 use App\Blog\Traits\Categorizable;
 
-class Attachment
+class Attachment implements ICategorizable
 {
     use Categorizable;
 

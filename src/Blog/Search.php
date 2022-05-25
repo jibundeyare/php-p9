@@ -2,11 +2,12 @@
 
 namespace App\Blog;
 
+use App\Blog\Interface\ICategorizable;
 use App\Blog\Category;
 
 class Search
 {
-    public static function hasCategory($object, Category $category): bool
+    public static function hasCategory(ICategorizable $object, Category $category): bool
     {
         if ($object->getCategory() == $category) {
             return true;
