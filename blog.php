@@ -1,8 +1,10 @@
 <?php
 
 use App\Blog\Article;
+use App\Blog\Attachment;
 use App\Blog\Category;
 use App\Blog\Tag;
+use App\Blog\Search;
 
 require __DIR__.'/vendor/autoload.php';
 
@@ -48,4 +50,18 @@ foreach ($articles as $article) {
         echo "same category title: {$article->getTitle()}";
         echo '<br>';
     }
+}
+
+$attachments = [
+    new Attachment(1, "doc 1", "/doc/doc1.pdf", $categories[0]),
+    new Attachment(2, "doc 2", "/doc/doc2.pdf", $categories[2]),
+    new Attachment(3, "doc 3", "/doc/doc3.pdf", $categories[2]),
+];
+
+for ($i = 0; $i < 3; $i++) {
+    $result = Search::hasCategory($articles[$i], $categories[$i]);
+    echo "{$articles[$i]->getCategory()->getName()} / {$categories[$i]->getName()}";
+    echo "<br>";
+    echo $result ? "oui" : "non";
+    echo "<br>";
 }
